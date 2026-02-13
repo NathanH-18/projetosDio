@@ -1,0 +1,32 @@
+let userRank, userVictories;
+
+function getRank(vitorias, derrotas) {
+  const saldo = vitorias - derrotas;
+
+  const regras = [
+    [1, 9, "Ferro"],
+    [10, 19, "Bronze"],
+    [20, 49, "Prata"],
+    [50, 79, "Ouro"],
+    [80, 89, "Diamante"],
+    [90, 99, "Lendário"],
+    [100, Infinity, "Imortal"]
+  ];
+
+  for (let [min, max, nome] of regras) {
+    if (saldo >= min && saldo <= max) {
+      return nome;
+    }
+  }
+
+  return "Sem Ranking";
+}
+
+function getVictories(vitorias, derrotas){
+   return vitorias - derrotas;
+};
+
+userRank = getRank(75, 10);
+userVictories = getVictories(75, 10);
+
+console.log(`O Jogador tem um saldo de: ${userVictories} vitórias, e está no Ranking: ${userRank}`);
