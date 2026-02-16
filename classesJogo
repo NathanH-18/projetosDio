@@ -1,0 +1,27 @@
+const ataques = {
+   mago: "magia",
+   guerreiro: "espada",
+   arqueiro: "arco e flecha",
+   monge: "artes marciais",
+   ninja: "shuriken"
+};
+
+class hero {
+   constructor(name, age, type){
+      this.name = name;
+      this.age = age;
+      this.type = type;
+   }
+   attack(){
+      const attackType = ataques[this.type];
+      console.log(`O ${this.type} ${this.name} atacou usando ${attackType}`);
+   }
+}
+
+let heroi1 = new hero("Gandalf", 2019, "mago");
+heroi1.attack(); 
+heroi1.type = "guerreiro";
+heroi1.attack(); 
+
+heroi2222 = new hero("Legolas", 2931, "arqueiro");
+heroi2222.attack(); 
